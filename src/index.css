@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.navbar__logo {
+  height: 40px;
+}
+
+.navbar__categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__category {
+  display: inline-block;
+  margin-right: 80px;
+  cursor: pointer;
+  font-size: 30px;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  color: rgb(78, 75, 255);
+  font-weight: bolder;
+}
+
+.navbar__category:hover {
+  color: #45ff67;
+  transition: ease .4s;
+}
+
+.active{
+  text-decoration: underline;
+  color: #45ff67;
+}
+
+
+/* Footer CSS  */
+
+.Footer{
+  color: black;
 }
