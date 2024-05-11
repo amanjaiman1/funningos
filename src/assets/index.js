@@ -1,3 +1,5 @@
+import logo from "./logo.png";
+
 import P500 from "./500.png";
 import P1000 from "./1000.png"
 import P1500 from "./1500.png"
@@ -44,6 +46,7 @@ import keyIcon from "./list.png"
 import footerImage from "./footer.png"
 
 export {
+    logo,
     P500,
     P1000,
     P1500, 

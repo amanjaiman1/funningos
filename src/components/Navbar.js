@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../index.css';
+import { logo } from '../assets';
 
 const Navbar = () => {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
 
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrollY > 0 ? 'scrolled' : ''}`}>
       <div className="navbar__left">
-        {/* <img src="/path/to/logo.png" alt="Logo" className="navbar__logo" /> */}
-        <h1>Funningos</h1>
+        <img className='logo' src={logo} alt="" />
       </div>
       <div className="navbar__right">
         <ul className="navbar__categories">

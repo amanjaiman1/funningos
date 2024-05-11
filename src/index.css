@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 body {
@@ -15,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
   color: white;
+  scroll-behavior: smooth;
 }
 
 code {
@@ -22,6 +24,10 @@ code {
     monospace;
 }
 
+.logo {
+  width: 100px;
+  margin-left: 20px;
+}
 
 .navbar {
   display: flex;
@@ -29,38 +35,66 @@ code {
   align-items: center;
   padding: 10px 20px;
   background-color: #ffffff;
+  font-style: normal;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for elegance */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for smoothness */
 }
 
-.navbar__logo {
-  height: 40px;
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.167); /* Change background color to transparent white */
+  backdrop-filter: blur(10px);
+  transition: ease-in 0.2s;
+}
+
+.navbar.scrolled .navbar__category {
+  color: #ffffff;
+  transition: ease-in 0.4s; /* Change color of navigation links to white */
+}
+
+.navbar__left h1 {
+  margin: 0;
+  font-size: 24px; /* Adjust font size */
+  color: #333333; /* Adjust text color */
+  text-transform: uppercase; /* Convert text to uppercase */
+}
+
+.navbar__right {
+  display: flex; /* Change display to flex */
+  align-items: center;
 }
 
 .navbar__categories {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex; /* Change display to flex */
 }
 
 .navbar__category {
-  display: inline-block;
-  margin-right: 80px;
+  margin-right: 50px; /* Adjust margin */
   cursor: pointer;
-  font-size: 30px;
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  color: rgb(78, 75, 255);
-  font-weight: bolder;
+  font-size: 18px; /* Adjust font size */
+  color: #333333; /* Adjust text color */
+  transition: color 0.1s ease; /* Add transition for smoothness */
 }
 
 .navbar__category:hover {
-  color: #45ff67;
-  transition: ease .4s;
+  color: #45ff67; /* Change text color on hover */
+}
+.navbar.scrolled .navbar__category:hover {
+  color: #45ff67; /* Change text color on hover */
 }
 
-.active{
+.active {
   text-decoration: underline;
   color: #45ff67;
 }
+
 
 
 /* Footer CSS  */

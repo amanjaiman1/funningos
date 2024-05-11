@@ -8,7 +8,7 @@ import Activity from './components/Pages/Activity';
 function App() {
   return (
     <>
-      <div className="App overflow-hidden">
+      <div className="App">
         <Navbar />
         <Activity />
         <Footer />
